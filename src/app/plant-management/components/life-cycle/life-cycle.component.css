@@ -19,18 +19,17 @@ app-sidenavbar-content {
   padding: 16px; /* Espaciado interno del contenido */
 }
 mat-card {
-  display: flex;
   flex-direction: column;
   justify-content: space-between; /* Distribuye los elementos */
   padding: 10px;
 
   width: 100%;
-  max-width: 2000px; /* Limita el ancho máximo de la tarjeta */
+  max-width: 1100px; /* Limita el ancho máximo de la tarjeta */
   border: 2px solid #8CAC60; /* Borde alrededor de la tarjeta */
   border-radius: 8px; /* Esquinas redondeadas */
   background-color: #8CAC60; /* Color de fondo */
-  margin-block-end: 200px;
-  margin-top: 200px;
+  margin-block-end: 202px;
+  margin-top: 100px;
 
 }
 .card-header {
