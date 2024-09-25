@@ -1,0 +1,167 @@
+.layout-container {
+  display: flex; /* Utiliza Flexbox para la disposición */
+}
+
+app-sidenavbar-content {
+  width: 200px; /* Ancho fijo para el sidenav */
+  background-color: #8A9A5B; /* Color del sidenav */
+}
+
+.main-content {
+  flex: 1; /* Toma el espacio restante */
+  display: flex;
+  flex-direction: column; /* Para apilar el toolbar y el contenido principal */
+  padding: 20px; /* Espaciado interno del contenido principal */
+}
+
+
+.layout-container .main-content .grid-container mat-card.dashboard-card  {
+  text-align: center; /* Alineación centrada del contenido */
+}
+
+
+.grid-container {
+  padding: 16px; /* Espacio interno alrededor del grid */
+  height: calc(100% - 64px); /* Ajusta la altura según el espacio disponible */
+}
+
+
+.mat-grid-tile-content {
+  background-color: #7D7161; /* Color de fondo para el contenido de cada tile */
+  border-radius: 35px; /* Esquinas redondeadas */
+  padding: 50px;
+  margin: 8px;
+  width: 100%;
+  height: 100%;
+
+
+}
+.mat-grid-tile-content-1 {
+  background-color: #7D7161; /* Color de fondo para el contenido de cada tile */
+  border-radius: 35px; /* Esquinas redondeadas */
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+
+}
+.activities-custom{
+  display: flex;
+  padding: 20px;
+  margin-block-end: 10px;
+  height: 50%;
+  width: 100%;
+  border: 2px solid #8CAC60; /* Borde alrededor de la tarjeta */
+  border-radius: 8px; /* Esquinas redondeadas del borde */
+  background-color: #8CAC60; /* Color de fondo de la tarjeta */
+}
+
+.garden-custom{
+  display: flex;
+  padding: 8px;
+  height: 100%;
+  width: 100%;
+  border: 2px solid #8CAC60; /* Borde alrededor de la tarjeta */
+  border-radius: 8px; /* Esquinas redondeadas del borde */
+  background-color: #8CAC60; /* Color de fondo de la tarjeta */
+  margin-block-end: 40px;
+}
+.lifecycle-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye los elementos */
+  padding: 10px;
+
+  width: 100%;
+  max-width: 2000px; /* Limita el ancho máximo de la tarjeta */
+  border: 2px solid #8CAC60; /* Borde alrededor de la tarjeta */
+  border-radius: 8px; /* Esquinas redondeadas */
+  background-color: #8CAC60; /* Color de fondo */
+  margin-block-end: 200px;
+  margin-top: 200px;
+}
+
+.image-garden {
+  width: 50px; /* Puedes ajustar el tamaño de la imagen */
+  height: 50px;
+  border-radius: 50%; /* Esto hará que la imagen sea circular */
+  margin-right: 15px; /* Espacio entre la imagen y el texto */
+}
+.card-header {
+  display: flex;
+  align-items: center; /* Alinea la imagen y el título verticalmente */
+  gap: 15px; /* Espacio entre la imagen y el título */
+}
+
+.custom-button {
+  background-color: #71998F; /* Color de fondo del botón */
+  padding: 8px 16px; /* Espaciado interno */
+  border-radius: 4px; /* Esquinas redondeadas */
+  align-self: end; /* Alinea el botón a la derecha dentro del contenedor */
+  margin: 8px; /* Espacio entre el card y el botón */
+  color: white !important; /* Cambia el color del texto del botón */
+  cursor: pointer;
+
+}
+
+.custom-button:hover {
+  background-color: #1f9a73; /* Color de fondo en hover */
+}
+.image-garden {
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+}
+mat-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+.plant-description {
+  margin-top: 16px;
+  text-align: left;
+  font-size: 16px;
+  color: #fff; /* Cambia el color del texto */
+}
+.plant-time {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 14px;
+  color: #fff;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around; /* Distribuye los iconos uniformemente */
+  width: 100%;
+  margin-top: 16px;
+}
+
+mat-icon {
+  font-size: 24px;
+}
+
+mat-progress-bar {
+  width: 100%;
+  height: 8px;
+  margin: 16px 0; /* Separación alrededor de la barra */
+}
+.image-garden-ga{
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+}
+.card-content {
+  display: flex; /* Usar Flexbox para el contenido */
+  justify-content: space-between; /* Espacio entre los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.card-title {
+  text-align: center; /* Centra el título */
+  margin: 16px 0; /* Añade margen para separación */
+}
+
+.info {
+  flex: 1; /* Permite que este contenedor ocupe el espacio restante */
+}

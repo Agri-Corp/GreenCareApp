@@ -1,0 +1,82 @@
+<div class="layout-container">
+  <app-sidenavbar-content></app-sidenavbar-content>
+  <div class="main-content">
+    <app-toolbar-content></app-toolbar-content>
+    <mat-grid-list cols="2" rowHeight="2:1" class="grid-container">
+      <mat-grid-tile>
+        <div class="mat-grid-tile-content-1">
+          <div>
+            <mat-icon>assignment_turned_in</mat-icon>
+            <span>Today’s activities</span>
+          </div>
+          <mat-card *ngFor="let activity of taskItems "  class="activities-custom" >
+            <mat-card-content class="dashboard-card-content">
+              {{ activity.task }}
+            </mat-card-content>
+            <mat-card-content class="dashboard-card-content">
+              {{ activity.time }}
+            </mat-card-content>
+            <mat-card-content class="dashboard-card-content">
+              {{ activity.day }}
+            </mat-card-content>
+
+          </mat-card>
+          <button mat-button class="custom-button">Ver Detalles</button>
+        </div>
+
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="mat-grid-tile-content">
+          <mat-card *ngFor="let garden of gardenItems.slice(0, 1) " class="garden-custom"  >
+            <mat-card-title class="card-title">New Plant</mat-card-title>
+            <div class="card-content">
+              <div class="info">
+                <mat-card-content>
+                  Name: {{ garden.plant }}
+                </mat-card-content>
+                <mat-card-content>
+                  Difficult: {{ garden.Difficult }}
+                </mat-card-content>
+                <mat-card-content>
+                  Time life: {{ garden.timelife }}
+
+                </mat-card-content>
+              </div>
+
+              <div>
+                <img mat-card-image [src]="garden.image" alt="Photo of a plant" class="image-garden-ga">
+              </div>
+            </div>
+          </mat-card>
+
+        </div>
+
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <div class="mat-grid-tile-content">
+
+          <mat-card *ngFor="let lifecycle of lifecycleitems.slice(0, 1) " class="lifecycle-content" >
+            <div>
+              <mat-icon>cached</mat-icon>
+              <span>Life Cycle</span>
+            </div>
+            <div class="card-header">
+              <img mat-card-image [src]="lifecycle.image" alt="Photo of a plant" class="image-garden">
+              <mat-card-title>{{lifecycle.name_plant}}</mat-card-title>
+            </div>
+            <mat-card-content class="plant-description">{{lifecycle.plant}}</mat-card-content>
+            <div class="icons">
+              <mat-icon>broken_image</mat-icon>
+              <mat-icon>brightness_6</mat-icon>
+              <mat-icon>brightness_7</mat-icon>
+            </div>
+            <mat-progress-bar mode="determinate" [value]="lifecycle.value"></mat-progress-bar>
+            <mat-card-content class="plant-time">{{lifecycle.time}}</mat-card-content>
+            <button mat-button class="custom-button">Ver Detalles</button>
+
+          </mat-card>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
