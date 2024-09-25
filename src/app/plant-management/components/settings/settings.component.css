@@ -1,0 +1,79 @@
+.layout-container {
+  display: flex; /* Utiliza Flexbox para la disposición */
+}
+
+app-sidenavbar-content {
+  width: 200px; /* Ancho fijo para el sidenav */
+  background-color: #8A9A5B; /* Color del sidenav */
+}
+
+.main-content {
+  flex: 1; /* Toma el espacio restante */
+  display: flex;
+  flex-direction: column; /* Para apilar el toolbar y el contenido principal */
+  padding-top: 20px; /* Agrega espacio en la parte superior */
+  position: relative; /* Establece el contenedor principal como relativo */
+
+}
+
+
+
+.main-content > *:not(app-toolbar-content) {
+  flex: 1; /* Esto permite que el contenido principal tome el resto del espacio */
+  padding: 16px; /* Espaciado interno del contenido */
+}
+mat-card {
+
+  height: 100%; /* Asegura que la tarjeta ocupe toda la altura disponible */
+  width: 75%;
+  display: flex;
+  flex-direction: column; /* Permite que el contenido se apile verticalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  padding: 16px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde opcional */
+  border-radius: 8px; /* Esquinas redondeadas opcionales */
+  background-color: #8A9A5B;
+  align-items: center; /* Centra verticalmente el contenido interno */
+
+}
+mat-card-title {
+  margin: 10px;
+}
+mat-form-field{
+  margin: 15px;
+}
+.mat-grid-tile-content {
+  border-radius: 35px; /* Esquinas redondeadas */
+  padding: 20px; /* Espaciado interno */
+  margin: 8px; /* Espacio entre los tiles */
+  width: 800px; /* Ancho específico del tile */
+  height: 600px; /* Alto específico del tile */
+  display: flex; /* Habilita flexbox para el contenido interno */
+  justify-content: center; /* Centra horizontalmente el contenido interno */
+  align-items: center; /* Centra verticalmente el contenido interno */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 25%; /* Coloca el elemento en el centro verticalmente */
+  left: 50%; /* Coloca el elemento en el centro horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta el elemento al centro exacto */
+
+}
+.image-icon{
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  margin-block-end: 16px;
+}
+.custom-button {
+  background-color: #71998F; /* Color de fondo del botón */
+  padding: 8px 16px; /* Espaciado interno */
+  border-radius: 20px; /* Esquinas redondeadas */
+  align-self: center; /* Alinea el botón a la derecha dentro del contenedor */
+  margin: 8px; /* Espacio entre el card y el botón */
+  color: white !important; /* Cambia el color del texto del botón */
+  cursor: pointer;
+
+}
+
+.custom-button:hover {
+  background-color: #1f9a73; /* Color de fondo en hover */
+}
