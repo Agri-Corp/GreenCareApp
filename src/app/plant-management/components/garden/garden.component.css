@@ -1,0 +1,63 @@
+.layout-container {
+  display: flex; /* Utiliza Flexbox para la disposición */
+}
+
+app-sidenavbar-content {
+  width: 200px; /* Ancho fijo para el sidenav */
+  background-color: #8A9A5B; /* Color del sidenav */
+}
+
+.main-content {
+  flex: 1; /* Toma el espacio restante */
+  display: flex;
+  flex-direction: column; /* Para apilar el toolbar y el contenido principal */
+  padding-top: 20px; /* Agrega espacio en la parte superior */
+}
+
+
+
+.main-content > *:not(app-toolbar-content) {
+  flex: 1; /* Esto permite que el contenido principal tome el resto del espacio */
+  padding: 16px; /* Espaciado interno del contenido */
+}
+
+mat-card {
+  display: flex;
+  padding: 8px;
+  height: 60%;
+  width: 75%;
+  border: 2px solid #8CAC60; /* Borde alrededor de la tarjeta */
+  border-radius: 8px; /* Esquinas redondeadas del borde */
+  background-color: #8CAC60; /* Color de fondo de la tarjeta */
+  margin: 4px; /* Espacio entre las tarjetas */
+}
+.mat-grid-tile-content {
+  background-color: #7D7161; /* Color de fondo para el contenido de cada tile */
+  padding: 4px; /* Espaciado interno */
+  border-radius: 35px; /* Esquinas redondeadas */
+  margin: 8px;
+  width: 100%;
+
+}
+
+
+
+.custom-button {
+  background-color: #71998F; /* Color de fondo del botón */
+  padding: 8px 16px; /* Espaciado interno */
+  border-radius: 4px; /* Esquinas redondeadas */
+  align-self: end; /* Alinea el botón a la derecha dentro del contenedor */
+  margin: 8px; /* Espacio entre el card y el botón */
+  color: white !important; /* Cambia el color del texto del botón */
+  cursor: pointer;
+
+}
+
+.custom-button:hover {
+  background-color: #1f9a73; /* Color de fondo en hover */
+}
+.image-garden {
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+}

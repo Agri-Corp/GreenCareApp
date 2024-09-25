@@ -1,0 +1,31 @@
+<div class="layout-container">
+  <app-sidenavbar-content></app-sidenavbar-content>
+  <div class="main-content">
+    <app-toolbar-content></app-toolbar-content>
+    <app-search-bar-content></app-search-bar-content>
+    <mat-grid-list class="custom-grid" cols="2" rowHeight="300px"  gutterSize="4px">
+      <mat-grid-tile *ngFor="let garden of gardenItems">
+        <div class="mat-grid-tile-content">
+          <mat-card >
+
+
+            <mat-card-content>
+              Name: {{ garden.plant }}
+            </mat-card-content>
+            <mat-card-content>
+              Difficult: {{ garden.Difficult }}
+            </mat-card-content>
+            <mat-card-content>
+              Time life: {{ garden.timelife }}
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div>
+          <img mat-card-image [src]="garden.image" alt="Photo of a plant" class="image-garden">
+        </div>
+        <button mat-button class="custom-button">Ver Detalles</button>
+
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

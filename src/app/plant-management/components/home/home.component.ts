@@ -3,6 +3,7 @@ import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {MatIcon} from "@angular/material/icon";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatProgressBar} from "@angular/material/progress-bar";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ import {MatProgressBar} from "@angular/material/progress-bar";
     MatCard,
     MatCardContent,
     MatCardTitle,
-    MatProgressBar
+    MatProgressBar,
+    NgForOf
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
