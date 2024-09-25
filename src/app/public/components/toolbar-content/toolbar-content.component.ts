@@ -1,11 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {MatToolbar} from "@angular/material/toolbar";
+import {CurrentSectionService} from "../../../shared/service/current-section.service";
+import {MatIcon} from "@angular/material/icon";
+import {NgClass, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-toolbar-content',
   standalone: true,
   imports: [
-    MatToolbar
+    MatToolbar,
+    MatToolbar,
+    NgClass,
+    NgOptimizedImage,
+    MatIcon
   ],
   templateUrl: './toolbar-content.component.html',
   styleUrl: './toolbar-content.component.css'

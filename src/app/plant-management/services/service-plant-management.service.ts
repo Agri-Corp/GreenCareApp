@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class ServicePlantManagementService {
 
-  Baseurl: string = 'https://my-json-server.typicode.com/Agri-Corp/dataAgriCore/main/db.json';
+  Baseurl: string = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {
   }

@@ -1,22 +1,29 @@
 import {Component, OnInit} from '@angular/core';
-import {MatGridList, MatGridTile} from "@angular/material/grid-list";
-import {MatIcon} from "@angular/material/icon";
-import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
+import {MatGridListModule} from "@angular/material/grid-list";
+import { MatIconModule} from "@angular/material/icon";
+import {MatCardModule} from "@angular/material/card";
 import {MatProgressBar} from "@angular/material/progress-bar";
-import {NgForOf} from "@angular/common";
+import {AsyncPipe, NgForOf} from "@angular/common";
+import {ToolbarContentComponent} from "../../../public/components/toolbar-content/toolbar-content.component";
+import {SidenavbarContentComponent} from "../../../public/components/sidenavbar-content/sidenavbar-content.component";
+import {ServicePlantManagementService} from "../../services/service-plant-management.service";
+import {MatButtonModule} from "@angular/material/button";
+import {MatMenuModule} from "@angular/material/menu";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    MatGridList,
-    MatGridTile,
-    MatIcon,
-    MatCard,
-    MatCardContent,
-    MatCardTitle,
+    AsyncPipe,
+    MatGridListModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    ToolbarContentComponent,
+    SidenavbarContentComponent,
+    NgForOf,
     MatProgressBar,
-    NgForOf
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

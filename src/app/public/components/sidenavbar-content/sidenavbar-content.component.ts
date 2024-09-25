@@ -1,29 +1,28 @@
 import {Component, inject} from '@angular/core';
-import {MatSidenav, MatSidenavContainer} from "@angular/material/sidenav";
-import {MatListItem, MatNavList} from "@angular/material/list";
-import {MatIcon} from "@angular/material/icon";
+import {MatSidenav, MatSidenavContainer, MatSidenavModule} from "@angular/material/sidenav";
+import {MatListItem, MatListModule, MatNavList} from "@angular/material/list";
+import {MatIcon, MatIconModule} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
 import {MatLine} from "@angular/material/core";
-import {MatToolbar} from "@angular/material/toolbar";
-import {MatIconButton} from "@angular/material/button";
+import {MatToolbar, MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule, MatIconButton} from "@angular/material/button";
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 import {map, Observable, shareReplay} from "rxjs";
 import {AsyncPipe} from "@angular/common";
+import {CurrentSectionService} from "../../../shared/service/current-section.service";
 
 @Component({
   selector: 'app-sidenavbar-content',
   standalone: true,
   imports: [
-    MatSidenavContainer,
-    MatSidenav,
-    MatNavList,
-    MatListItem,
-    MatIcon,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    AsyncPipe,
     RouterLink,
     MatLine,
-    MatToolbar,
-    MatIconButton,
-    AsyncPipe
   ],
   templateUrl: './sidenavbar-content.component.html',
   styleUrl: './sidenavbar-content.component.css'
