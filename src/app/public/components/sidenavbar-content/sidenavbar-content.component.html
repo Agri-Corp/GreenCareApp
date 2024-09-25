@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+
+    <div class="profile-container">
+      <img src="assets/person.png" alt="Profile Image" class="profile-image">
+      <div class="profile-info">
+        <span class="name">Jhon Doe</span>
+        <span class="surname">Agriculture</span>
+      </div>
+    </div>
+    <mat-nav-list>
+      <mat-list-item [routerLink]="'/home'" (click)="updateSection('Home')">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span mat-line>Home</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'/garden'" (click)="updateSection('Garden')">
+        <mat-icon mat-list-icon>park</mat-icon>
+        <span mat-line>Garden</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'/lifecycle'" (click)="updateSection('Life Cycle')">
+        <mat-icon mat-list-icon>cached</mat-icon>
+        <span mat-line>Life Cycle</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'/plans'" (click)="updateSection('Plans')">
+        <mat-icon mat-list-icon>layers</mat-icon>
+        <span mat-line>Plans</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'/settings'" (click)="updateSection('Settings')">
+        <mat-icon mat-list-icon>settings</mat-icon>
+        <span mat-line>Settings</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      @if (isHandset$ | async) {
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,28 @@
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-content {
+  display: flex; /* Utiliza Flexbox para el contenido del toolbar */
+  align-items: center; /* Alinea verticalmente el icono y el título */
+}
+
+.toolbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 8px; /* Espacio entre el icono y el título */
+}
+
+.plans-color {
+  color: #4CAF50; /* Verde para la sección Plans */
+}
+
+.profile-color {
+  color: #FFC107; /* Amarillo para la sección Profile */
+}
+
+.default-color {
+  color: #8BC34A; /* Verde claro para la sección por defecto */
+}

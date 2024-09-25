@@ -1,0 +1,59 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: #8A9A5B; /* Olive green */
+  padding-top: 64px; /* Espaciado en la parte superior para que no se superponga con el toolbar */
+}
+
+.mat-nav-list {
+  padding: 0; /* Eliminar el padding por defecto para alinear correctamente */
+}
+
+mat-sidenav .mat-nav-list mat-list-item {
+  margin-bottom: 10px !important; /* Espacio entre los elementos */
+  padding: 8px 16px; /* Espacio interno del elemento */
+  transition: color 0.3s ease; /* Transición suave para el color */
+  color: #333; /* Color de texto por defecto */
+}
+
+mat-sidenav .mat-nav-list mat-list-item:hover {
+  color: white !important; ; /* Cambiar el color a blanco al pasar el mouse */
+  background-color: #6b7d45; /* Cambiar el fondo al pasar el mouse */
+}
+
+mat-sidenav .mat-nav-list mat-list-item.active {
+  color: white; /* Mantener el color blanco cuando está activo */
+  background-color: #6b7d45; /* Fondo para el elemento activo */
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 50px; /* Puedes ajustar el tamaño de la imagen */
+  height: 50px;
+  border-radius: 50%; /* Esto hará que la imagen sea circular */
+  margin-right: 15px; /* Espacio entre la imagen y el texto */
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.surname {
+  font-size: 14px;
+  color: white;
+}
+
+

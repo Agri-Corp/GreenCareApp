@@ -1,0 +1,17 @@
+.custom-form-field {
+  width: 70%;
+  display: flex;
+  margin: 20px auto;
+}
+
+mat-form-field {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+mat-icon.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
