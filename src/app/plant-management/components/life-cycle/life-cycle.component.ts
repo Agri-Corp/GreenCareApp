@@ -9,18 +9,10 @@ import {MatButton} from "@angular/material/button";
 import {ServicePlantManagementService} from "../../services/service-plant-management.service";
 import {NgForOf} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
-import {FunctionsService} from "../../../functions-management/service/functions.service";
-import {ActivatedRoute} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {LifecycledetailsComponent} from "../lifecycledetails/lifecycledetails.component";
 
-interface Lifecycle {
-  userId: string;
-  name_plant: string;
-  plant: string;
-  value: number;
-  image: string;
-  status: string;
-  time: string;
-}
+
 
 @Component({
   selector: 'app-life-cycle',
@@ -48,27 +40,11 @@ export class LifeCycleComponent implements OnInit{
   loading: boolean = true;  // Indicador de carga
   error: string | null = null;// Mensaje de error
 
-  lifecycle: Lifecycle = {
-    userId: '',
-    name_plant: '',
-    plant: '',
-    value: 0,
-    image: '',
-    status: 'Good',
-    time: ''
-  };
 
-  plantId: string | null = null;
-  progressValue: number = 0; // Para la barra de progreso
-
-  constructor(private plantService: ServicePlantManagementService, private route: ActivatedRoute,
-              private functionsService: FunctionsService) {}
+  constructor(private plantService: ServicePlantManagementService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadLifeCycles();
-    this.plantId = this.route.snapshot.paramMap.get('id');
-    // Aquí se obtiene la planta usando el servicio
-    this.getPlantDetails(this.plantId);
   }
 
   loadLifeCycles(): void {
@@ -84,35 +60,23 @@ export class LifeCycleComponent implements OnInit{
       }
     });
   }
-  getPlantDetails(id: string | null): void {
-    this.functionsService.getPlantDetails(id).subscribe(data => {
-      this.lifecycle.image = data.image;
-      this.lifecycle.plant = data.plant;
+  openTaskDialog(lifecycle: any): void {
+    const tasks = [
+      { title: 'Regar la planta', completed: false },
+      { title: 'Fertilizar', completed: false },
+      { title: 'Podar', completed: false },
+    ];
+
+    const dialogRef = this.dialog.open(LifecycledetailsComponent, {
+      width: '400px',
+      data: { tasks },
     });
-  }
 
-  createLifecycle() {
-    const userId = 'your_user_id'; // Debes obtener el ID del usuario actual
-    this.lifecycle.userId = userId;
-    // Realiza el POST para crear el ciclo de vida
-    this.functionsService.createLifecycle(this.lifecycle).subscribe(() => {
-      // Inicia el temporizador para la barra de progreso
-      this.startProgress();
-    });
-  }
-
-  startProgress() {
-    const totalTimeInDays = parseInt(this.lifecycle.time); // Convierte a días
-    const interval = (totalTimeInDays * 24 * 60 * 60 * 1000) / 100; // Divide el tiempo por 100 para el progreso
-    let currentValue = 0;
-
-    const progressInterval = setInterval(() => {
-      if (currentValue < 100) {
-        currentValue++;
-        this.progressValue = currentValue; // Actualiza el valor de progreso
-      } else {
-        clearInterval(progressInterval); // Detiene el intervalo
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Manejar el resultado si es necesario
       }
-    }, interval);
+    });
   }
+
 }

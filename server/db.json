@@ -1,14 +1,14 @@
 {
   "Activities": [
     {
-      "id": 1,
+      "id": "1",
       "userId": "991d",
       "task": "Water the plants",
       "time": "9:30 am",
       "day": "28/08/2024"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": "e376",
       "task": "Change the water",
       "time": "11:45 am",
@@ -17,7 +17,7 @@
   ],
   "Garden": [
     {
-      "id": 1,
+      "id": "1",
       "plant": "Perejil",
       "Difficult": "easy",
       "value": 20,
@@ -25,7 +25,7 @@
       "timelife": "1 year"
     },
     {
-      "id": 2,
+      "id": "2",
       "plant": "Albahaca",
       "Difficult": "medium",
       "value": 30,
@@ -33,7 +33,7 @@
       "timelife": "6 months"
     },
     {
-      "id": 3,
+      "id": "3",
       "plant": "Tomate",
       "Difficult": "medium",
       "value": 40,
@@ -41,7 +41,7 @@
       "timelife": "1 year"
     },
     {
-      "id": 4,
+      "id": "4",
       "plant": "Menta",
       "Difficult": "easy",
       "value": 50,
@@ -49,7 +49,7 @@
       "timelife": "3 years"
     },
     {
-      "id": 5,
+      "id": "5",
       "plant": "Romero",
       "Difficult": "hard",
       "value": 35,
@@ -59,7 +59,7 @@
   ],
   "LifeCycle": [
     {
-      "id": 1,
+      "id": "1",
       "userId": "991d",
       "name_plant": "Paco",
       "plant": "Perejil",
@@ -69,7 +69,7 @@
       "time": "2 months"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": "e376",
       "name_plant": "Luna",
       "plant": "Albahaca",
@@ -77,6 +77,35 @@
       "image": "https://image.tuasaude.com/media/article/zg/be/para-que-sirve-la-albahaca_57823_l.jpg",
       "status": "Excellent",
       "time": "1 month"
+    },
+    {
+      "id": "88bd",
+      "planName": "Alv",
+      "time": 500,
+      "about": "hola",
+      "userId": ""
+    },
+    {
+      "id": "89",
+      "userId": "",
+      "name_plant": "patata",
+      "plant": "Perejil",
+      "image": "https://herbario.istmas.edu.ec/wp-content/uploads/2020/11/perejil-1.jpg",
+      "status": "Excellent",
+      "time": "600 hours",
+      "about": "dsadsa",
+      "value": 0
+    },
+    {
+      "id": "3",
+      "userId": "e376",
+      "name_plant": "dsadsa",
+      "plant": "Perejil",
+      "image": "https://herbario.istmas.edu.ec/wp-content/uploads/2020/11/perejil-1.jpg",
+      "status": "Excellent",
+      "time": "600 hours",
+      "about": "dsadas",
+      "value": 0
     }
   ],
   "users": [
