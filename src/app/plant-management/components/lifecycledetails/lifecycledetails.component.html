@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Tareas Diarias</h2>
+<mat-dialog-content>
+  <div *ngFor="let task of data.tasks">
+    <mat-checkbox [(ngModel)]="task.completed" (change)="toggleTaskCompletion(task)">
+      {{ task.title }}
+    </mat-checkbox>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cerrar</button>
+</mat-dialog-actions>
