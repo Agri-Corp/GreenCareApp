@@ -1,0 +1,25 @@
+<div class="login-container">
+  <img src="assets/ToolbarLogo.png" alt="Logo" class="logo" />
+  <h2>Welcome to GREENCARE!</h2>
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <label>Email</label>
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="loginData.email"
+      required
+    />
+    <label>Password</label>
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="loginData.password"
+      required
+    />
+    <button type="submit">Login</button>
+    <button type="button" (click)="navigateToRegister()">Create Account</button>
+  </form>
+
+  <!-- Mostrar mensaje de error si la autenticación falla -->
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+</div>

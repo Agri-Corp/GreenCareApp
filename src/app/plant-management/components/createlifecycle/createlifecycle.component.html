@@ -1,0 +1,24 @@
+<div class="dialog-container">
+  <h2>{{ data?.plant }}</h2>
+  <img [src]="data?.image" alt="Plant Image" />
+
+  <form (ngSubmit)="startLifeCycle()">
+    <mat-form-field>
+      <mat-label>Name of your plan</mat-label>
+      <input matInput [(ngModel)]="lifeCycleData.planName" name="planName" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Time (in hours)</mat-label>
+      <input matInput type="number" [(ngModel)]="lifeCycleData.time" name="time" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>About it</mat-label>
+      <textarea matInput [(ngModel)]="lifeCycleData.about" name="about"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Start life cycle</button>
+  </form>
+</div>
+

@@ -7,6 +7,9 @@ import {SidenavbarContentComponent} from "../../../public/components/sidenavbar-
 import {ToolbarContentComponent} from "../../../public/components/toolbar-content/toolbar-content.component";
 import {SearchBarContentComponent} from "../../../public/components/search-bar-content/search-bar-content.component";
 import {ServicePlantManagementService} from "../../services/service-plant-management.service";
+import {Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {CreatelifecycleComponent} from "../createlifecycle/createlifecycle.component";
 
 @Component({
   selector: 'app-garden',
@@ -31,10 +34,30 @@ export class GardenComponent implements OnInit{
   gardenItems : any[] = [];
 
 
-  constructor(private menuService: ServicePlantManagementService) {}
+  constructor(private menuService: ServicePlantManagementService,private dialog: MatDialog, private router: Router) {}
   ngOnInit() {
     this.menuService.getgarden().subscribe((data: any[]) => {
       this.gardenItems = data;
+    });
+  }
+  openCreateLifeCycleDialog(garden: any) {
+    const dialogRef = this.dialog.open(CreatelifecycleComponent, {
+      data: { plant: garden.plant, image: garden.image }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.menuService.createLifeCycle(result).subscribe(
+          response => {
+            console.log('Ciclo de vida creado:', response);
+            // Redirigir a la pantalla de ciclos de vida
+            this.router.navigate(['/lifecycle']);
+          },
+          error => {
+            console.error('Error al crear ciclo de vida:', error);
+          }
+        );
+      }
     });
   }
 }

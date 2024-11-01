@@ -1,21 +1,23 @@
 {
   "Activities": [
     {
-      "id": 1,
+      "id": "1",
+      "userId": "991d",
       "task": "Water the plants",
       "time": "9:30 am",
       "day": "28/08/2024"
     },
     {
-      "id": 2,
-      "task": "change the water",
+      "id": "2",
+      "userId": "e376",
+      "task": "Change the water",
       "time": "11:45 am",
       "day": "29/08/2024"
     }
   ],
   "Garden": [
     {
-      "id": 1,
+      "id": "1",
       "plant": "Perejil",
       "Difficult": "easy",
       "value": 20,
@@ -23,7 +25,7 @@
       "timelife": "1 year"
     },
     {
-      "id": 2,
+      "id": "2",
       "plant": "Albahaca",
       "Difficult": "medium",
       "value": 30,
@@ -31,7 +33,7 @@
       "timelife": "6 months"
     },
     {
-      "id": 3,
+      "id": "3",
       "plant": "Tomate",
       "Difficult": "medium",
       "value": 40,
@@ -39,7 +41,7 @@
       "timelife": "1 year"
     },
     {
-      "id": 4,
+      "id": "4",
       "plant": "Menta",
       "Difficult": "easy",
       "value": 50,
@@ -47,7 +49,7 @@
       "timelife": "3 years"
     },
     {
-      "id": 5,
+      "id": "5",
       "plant": "Romero",
       "Difficult": "hard",
       "value": 35,
@@ -57,7 +59,8 @@
   ],
   "LifeCycle": [
     {
-      "id": 1,
+      "id": "1",
+      "userId": "991d",
       "name_plant": "Paco",
       "plant": "Perejil",
       "value": 20,
@@ -66,7 +69,8 @@
       "time": "2 months"
     },
     {
-      "id": 2,
+      "id": "2",
+      "userId": "e376",
       "name_plant": "Luna",
       "plant": "Albahaca",
       "value": 25,
@@ -75,31 +79,53 @@
       "time": "1 month"
     },
     {
-      "id": 3,
-      "name_plant": "Tom",
-      "plant": "Romero",
-      "value": 15,
-      "image": "https://www.thespicehouse.com/cdn/shop/articles/Rosemary_900x.jpg",
-      "status": "Average",
-      "time": "3 months"
+      "id": "88bd",
+      "planName": "Alv",
+      "time": 500,
+      "about": "hola",
+      "userId": ""
     },
     {
-      "id": 4,
-      "name_plant": "Lola",
-      "plant": "Tomillo",
-      "value": 30,
-      "image": "https://wildroots.in/wp-content/uploads/2020/12/thyme-1.jpg",
-      "status": "Good",
-      "time": "4 months"
+      "id": "89",
+      "userId": "",
+      "name_plant": "patata",
+      "plant": "Perejil",
+      "image": "https://herbario.istmas.edu.ec/wp-content/uploads/2020/11/perejil-1.jpg",
+      "status": "Excellent",
+      "time": "600 hours",
+      "about": "dsadsa",
+      "value": 0
     },
     {
-      "id": 5,
-      "name_plant": "Max",
-      "plant": "Menta",
-      "value": 40,
-      "image": "https://media.admagazine.com/photos/618a61cc2f01962557ac402d/master/w_1600,c_limit/83667.jpg",
-      "status": "Bad",
-      "time": "2 weeks"
+      "id": "3",
+      "userId": "e376",
+      "name_plant": "dsadsa",
+      "plant": "Perejil",
+      "image": "https://herbario.istmas.edu.ec/wp-content/uploads/2020/11/perejil-1.jpg",
+      "status": "Excellent",
+      "time": "600 hours",
+      "about": "dsadas",
+      "value": 0
+    }
+  ],
+  "users": [
+    {
+      "id": "991d",
+      "name": "luis eduardo",
+      "email": "palacioskarla507@hotmail.com",
+      "password": "dsadadsad"
+    },
+    {
+      "id": "e376",
+      "name": "luis eduardo",
+      "email": "lic_veronica2009@hotmail.com",
+      "password": "vh2UYf5SzHgJ9nF"
+    },
+    {
+      "id": "eb18",
+      "name": "Marta Diaz",
+      "email": "luis@hotmail.com",
+      "password": "patata123"
     }
   ]
 }

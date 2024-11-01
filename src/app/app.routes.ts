@@ -5,8 +5,18 @@ import {LifeCycleComponent} from "./plant-management/components/life-cycle/life-
 import {PlansComponent} from "./plant-management/components/plans/plans.component";
 import {SettingsComponent} from "./plant-management/components/settings/settings.component";
 import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
+import {RegisterComponent} from "./account-management/components/register/register.component";
+import {LoginComponent} from "./account-management/components/login/login.component";
 
 export const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
   {
     path: 'home',
     component: HomeComponent,
@@ -28,7 +38,7 @@ export const routes: Routes = [
     component: SettingsComponent
   },
   { path: '',
-    redirectTo: 'home', pathMatch: 'full'
+    redirectTo: 'login', pathMatch: 'full'
   },
   { path: '**',
     component: PageNotFoundComponent

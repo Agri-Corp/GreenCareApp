@@ -9,6 +9,10 @@ import {MatButton} from "@angular/material/button";
 import {ServicePlantManagementService} from "../../services/service-plant-management.service";
 import {NgForOf} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
+import {MatDialog} from "@angular/material/dialog";
+import {LifecycledetailsComponent} from "../lifecycledetails/lifecycledetails.component";
+
+
 
 @Component({
   selector: 'app-life-cycle',
@@ -32,13 +36,47 @@ import {MatIcon} from "@angular/material/icon";
   styleUrl: './life-cycle.component.css'
 })
 export class LifeCycleComponent implements OnInit{
-  lifecycleItems : any[] = [];
+  lifeCycles: any[] = [];  // Array para almacenar los ciclos de vida
+  loading: boolean = true;  // Indicador de carga
+  error: string | null = null;// Mensaje de error
 
 
-  constructor(private menuService: ServicePlantManagementService) {}
-  ngOnInit() {
-    this.menuService.getlifecycle().subscribe((data: any[]) => {
-      this.lifecycleItems = data;
+  constructor(private plantService: ServicePlantManagementService, private dialog: MatDialog) {}
+
+  ngOnInit(): void {
+    this.loadLifeCycles();
+  }
+
+  loadLifeCycles(): void {
+    this.plantService.getlifecycle().subscribe({
+      next: (data) => {
+        this.lifeCycles = data;  // Asignar los datos recibidos al array
+        this.loading = false;     // Cambiar el estado de carga
+      },
+      error: (err) => {
+        console.error('Error fetching life cycles:', err);
+        this.error = 'Error loading life cycles';  // Mostrar un mensaje de error
+        this.loading = false;  // Cambiar el estado de carga
+      }
     });
   }
+  openTaskDialog(lifecycle: any): void {
+    const tasks = [
+      { title: 'Regar la planta', completed: false },
+      { title: 'Fertilizar', completed: false },
+      { title: 'Podar', completed: false },
+    ];
+
+    const dialogRef = this.dialog.open(LifecycledetailsComponent, {
+      width: '400px',
+      data: { tasks },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Manejar el resultado si es necesario
+      }
+    });
+  }
+
 }

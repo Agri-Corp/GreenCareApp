@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {MatSidenav, MatSidenavContainer, MatSidenavModule} from "@angular/material/sidenav";
 import {MatListItem, MatListModule, MatNavList} from "@angular/material/list";
 import {MatIcon, MatIconModule} from "@angular/material/icon";
@@ -10,6 +10,7 @@ import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 import {map, Observable, shareReplay} from "rxjs";
 import {AsyncPipe} from "@angular/common";
 import {CurrentSectionService} from "../../../shared/service/current-section.service";
+import {AccountManagementService, User} from "../../../account-management/service/account-management.service";
 
 @Component({
   selector: 'app-sidenavbar-content',
@@ -27,7 +28,10 @@ import {CurrentSectionService} from "../../../shared/service/current-section.ser
   templateUrl: './sidenavbar-content.component.html',
   styleUrl: './sidenavbar-content.component.css'
 })
-export class SidenavbarContentComponent {
+export class SidenavbarContentComponent implements OnInit{
+  userName: string = '';
+  constructor(private sectionService: CurrentSectionService,private  authService: AccountManagementService) {}
+
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -36,8 +40,16 @@ export class SidenavbarContentComponent {
       shareReplay()
     );
 
-  constructor(private sectionService: CurrentSectionService) {}
+  ngOnInit(): void {
+    this.updateUserDetails();
+  }
 
+  private updateUserDetails() {
+    const currentUser: User | null = this.authService.getCurrentUser();
+    if (currentUser) {
+      this.userName = currentUser.name; // Toma el nombre del usuario actual
+    }
+  }
   updateSection(section: string) {
     this.sectionService.setCurrentSection(section);
   }
