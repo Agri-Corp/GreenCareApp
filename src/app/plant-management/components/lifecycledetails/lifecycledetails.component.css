@@ -1,0 +1,23 @@
+mat-dialog-title {
+  color: #3f51b5; /* Primary color */
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+mat-checkbox {
+  color: #3f51b5; /* Primary color */
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  background-color: #3f51b5; /* Primary color */
+  color: white;
+}

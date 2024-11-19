@@ -7,6 +7,8 @@ import {ToolbarContentComponent} from "../../../public/components/toolbar-conten
 import {SidenavbarContentComponent} from "../../../public/components/sidenavbar-content/sidenavbar-content.component";
 import {MatDatepickerInput} from "@angular/material/datepicker";
 import {MatAnchor, MatButton} from "@angular/material/button";
+import {ServicePlantManagementService} from "../../services/service-plant-management.service";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-settings',
@@ -26,11 +28,26 @@ import {MatAnchor, MatButton} from "@angular/material/button";
     MatInput,
     MatButton,
     MatAnchor,
-    MatCardImage
+    MatCardImage,
+    FormsModule
   ],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.css'
 })
 export class SettingsComponent {
+  oldPassword: string = '';
+  newPassword: string = '';
 
+  constructor(private service: ServicePlantManagementService) {}
+
+  savePassword() {
+    this.service.updatePasswordForAll(this.oldPassword, this.newPassword).subscribe(
+      responses => {
+        console.log('Passwords updated successfully:', responses);
+      },
+      error => {
+        console.error('Error updating passwords:', error);
+      }
+    );
+  }
 }

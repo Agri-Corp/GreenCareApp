@@ -32,6 +32,10 @@
         <mat-icon mat-list-icon>settings</mat-icon>
         <span mat-line>Settings</span>
       </mat-list-item>
+      <mat-list-item [routerLink]="'/login'" (click)=logout()>
+        <mat-icon mat-list-icon>logout</mat-icon>
+        <span mat-line>logout</span>
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

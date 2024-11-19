@@ -3,6 +3,7 @@
     {
       "id": "1",
       "userId": "991d",
+      "lifeCycleId": "1",
       "task": "Water the plants",
       "time": "9:30 am",
       "day": "28/08/2024"
@@ -10,6 +11,7 @@
     {
       "id": "2",
       "userId": "e376",
+      "lifeCycleId": "1",
       "task": "Change the water",
       "time": "11:45 am",
       "day": "29/08/2024"
@@ -60,51 +62,13 @@
   "LifeCycle": [
     {
       "id": "1",
-      "userId": "991d",
-      "name_plant": "Paco",
-      "plant": "Perejil",
-      "value": 20,
-      "image": "https://herbario.istmas.edu.ec/wp-content/uploads/2020/11/perejil-1.jpg",
-      "status": "Good",
-      "time": "2 months"
-    },
-    {
-      "id": "2",
-      "userId": "e376",
-      "name_plant": "Luna",
+      "userId": "207b",
+      "name_plant": "a",
       "plant": "Albahaca",
-      "value": 25,
       "image": "https://image.tuasaude.com/media/article/zg/be/para-que-sirve-la-albahaca_57823_l.jpg",
       "status": "Excellent",
-      "time": "1 month"
-    },
-    {
-      "id": "88bd",
-      "planName": "Alv",
-      "time": 500,
-      "about": "hola",
-      "userId": ""
-    },
-    {
-      "id": "89",
-      "userId": "",
-      "name_plant": "patata",
-      "plant": "Perejil",
-      "image": "https://herbario.istmas.edu.ec/wp-content/uploads/2020/11/perejil-1.jpg",
-      "status": "Excellent",
-      "time": "600 hours",
-      "about": "dsadsa",
-      "value": 0
-    },
-    {
-      "id": "3",
-      "userId": "e376",
-      "name_plant": "dsadsa",
-      "plant": "Perejil",
-      "image": "https://herbario.istmas.edu.ec/wp-content/uploads/2020/11/perejil-1.jpg",
-      "status": "Excellent",
-      "time": "600 hours",
-      "about": "dsadas",
+      "time": "2 hours",
+      "about": "a",
       "value": 0
     }
   ],
@@ -113,19 +77,50 @@
       "id": "991d",
       "name": "luis eduardo",
       "email": "palacioskarla507@hotmail.com",
-      "password": "dsadadsad"
+      "password": "dsadadsad",
+      "userPlan": "premium"
     },
     {
       "id": "e376",
       "name": "luis eduardo",
       "email": "lic_veronica2009@hotmail.com",
-      "password": "vh2UYf5SzHgJ9nF"
+      "password": "vh2UYf5SzHgJ9nF",
+      "userPlan": "freemium"
     },
     {
       "id": "eb18",
       "name": "Marta Diaz",
       "email": "luis@hotmail.com",
-      "password": "patata123"
+      "password": "patata123",
+      "userPlan": "freemium"
+    },
+    {
+      "id": "a5fb",
+      "name": "Luis Lagos",
+      "email": "o@gmail.com",
+      "password": "123",
+      "userPlan": "premium"
+    },
+    {
+      "id": "fbcc",
+      "name": "Pedro",
+      "email": "patata@gmail.com",
+      "password": "123",
+      "userPlan": "freemium"
+    },
+    {
+      "id": "38fa",
+      "name": "Federico",
+      "email": "wa@gmail.com",
+      "password": "123",
+      "userPlan": "premium"
+    },
+    {
+      "id": "207b",
+      "name": "Alexis",
+      "email": "alexis@gmail.com",
+      "password": "123",
+      "userPlan": "premium"
     }
   ]
 }

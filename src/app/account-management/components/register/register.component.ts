@@ -26,8 +26,9 @@ export class RegisterComponent {
   onSubmit(): void {
     if (this.registerForm.valid) {
       const { name, email, password } = this.registerForm.value;
+      const userPlan = 'freemium'; // Set the userPlan to 'freemium' by default
 
-      this.authService.register({ name, email, password }).subscribe({
+      this.authService.register({ name, email, password, userPlan }).subscribe({
         next: (response) => {
           console.log('Registered successfully!', response);
           alert('Registered successfully!');
