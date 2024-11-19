@@ -19,7 +19,7 @@ export class AccountManagementService {
 
   constructor(private http: HttpClient) {}
 
-  register(userData: { name: string; email: string; password: string }): Observable<any> {
+  register(userData: { name: string; email: string; password: string,userPlan:string }): Observable<any> {
     return this.http.post(`${this.Baseurl}/users`, userData);
   }
 

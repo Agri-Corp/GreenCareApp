@@ -102,3 +102,7 @@ mat-progress-bar {
   height: 8px;
   margin: 16px 0; /* Separación alrededor de la barra */
 }
+.plan-info {
+  text-align: right;
+  margin-right: 16px; /* Optional: Add some margin to the right */
+}

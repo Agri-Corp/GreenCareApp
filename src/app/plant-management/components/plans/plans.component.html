@@ -4,7 +4,7 @@
     <app-toolbar-content></app-toolbar-content>
     <mat-grid-list cols="2" rowHeight="1:1" gutterSize="16px">
       <mat-grid-tile>
-        <mat-card class="freemium">
+        <mat-card [ngClass]="{'freemium': userPlan === 'freemium', 'premium': userPlan === 'premium'}">
           <mat-card-title>
             GreenCare Free
           </mat-card-title>
@@ -20,13 +20,10 @@
           <mat-card-content>
             Recommendation for each plant
           </mat-card-content>
-          <div class="custom-button">
-            <button>Go it</button>
-          </div>
         </mat-card>
       </mat-grid-tile>
       <mat-grid-tile>
-        <mat-card class="premium">
+        <mat-card [ngClass]="{'freemium': userPlan === 'freemium', 'premium': userPlan === 'premium'}">
           <mat-card-title>
             GreenCare Premium
           </mat-card-title>
@@ -42,8 +39,8 @@
           <mat-card-content>
             Recommendation for each plant
           </mat-card-content>
-          <div class="custom-button">
-            <button>Let's start!</button>
+          <div class="custom-button" *ngIf="userPlan === 'freemium'">
+            <button (click)="updatePlanToPremium()">Let's start!</button>
           </div>
         </mat-card>
       </mat-grid-tile>

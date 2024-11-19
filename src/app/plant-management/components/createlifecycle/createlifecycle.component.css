@@ -46,3 +46,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #388e3c;
 }
+.plan-info {
+  text-align: right;
+  margin-right: 16px; /* Optional: Add some margin to the right */
+}

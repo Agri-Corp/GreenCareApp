@@ -53,4 +53,9 @@ export class SidenavbarContentComponent implements OnInit{
   updateSection(section: string) {
     this.sectionService.setCurrentSection(section);
   }
+
+  logout() {
+    this.authService.logout(); // Llama al método de cierre de sesión
+    this.updateUserDetails(); // Actualiza los detalles del usuario
+  }
 }

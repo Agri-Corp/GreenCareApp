@@ -35,7 +35,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private menuService: ServicePlantManagementService) {}
   ngOnInit() {
-    this.menuService.getActivities().subscribe((data: any[]) => {
+    const lifeCycleId = '1';
+    this.menuService.getActivities(lifeCycleId).subscribe((data: any[]) => {
       this.taskItems = data;
     });
     this.menuService.getlifecycle().subscribe((data: any[]) => {
